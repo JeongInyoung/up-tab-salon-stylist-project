@@ -1,0 +1,1011 @@
+// =======================================
+// Media Queries Variables (Device)
+// =======================================
+$mobile: 560px;
+$tablet: 760px;
+$desktop: 1000px;
+// Line Height 간격 설정
+$base-line-height: 21px;
+
+// =======================================
+// Grid System Style
+// =======================================
+// Layout wrap
+.wrap {
+	min-width: 320px;
+	padding-left: 20px;
+	padding-right: 20px;
+	z-index: 100;
+	@include susy-breakpoint($desktop, 12) {
+		@include container($desktop);
+	}
+	&:after,
+	&:before {
+		content: '';
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// =======================================
+// Base Style
+// =======================================
+html[class^='lt-ie'], [class^='lt-ie'] body {
+	height: 100%;
+}
+body {
+	height: 100%;
+	height: 100vh;
+	background: $bg-default;
+	* {
+		padding: 0;
+		margin: 0;
+	}
+}
+// border-box 설정
+@include border-box-sizing;
+// 드래그 색상 지정
+*::selection {
+	background-color: #dfbde9; color: $font-color-purple;
+}
+*::-moz-selection {
+	background-color: #dfbde9; color: $font-color-purple;
+}
+input, button, select, textarea {
+	border: 0;
+	cursor: pointer;
+	outline: none;
+}
+// 웹킷 전용 속성
+::-webkit-input-placeholder {
+	color:$font-color-label;
+}
+// 파이어폭스 전용 속성
+textarea:-moz-placeholder, input:-moz-placeholder {
+	color:$font-color-label;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	textarea {
+		margin-bottom: -5px;
+	}
+}
+a {
+	color: inherit;
+	text-decoration: inherit;
+	cursor: pointer;
+	outline: none;
+}
+button {
+	background-color: transparent;
+	outline: none;
+}
+// input 자동완성 스타일 제거(변경)
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	-webkit-text-fill-color: $font-color-label;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+// 영역 밖으로 넘어가는 글자 점(...)처리
+%text-wrap {
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+// FontAwesome
+@mixin fa ($icon: " ", $fz: 16) {
+	font-family: 'FontAwesome';
+	content: $icon;
+	font-size: $fz + px;
+}
+// 영역 내 가운데 정렬
+@mixin wh-center ($position: absolute, $h-percent: 50%, $w-percent: 50%) {
+	position: $position;
+	top: $h-percent;
+	left: $w-percent;
+	transform: translate(-$h-percent, -$w-percent);
+}
+@mixin w-center ($position: absolute, $w-percent: 50%) {
+	position: $position;
+	left: $w-percent;
+	transform: translateX(-$w-percent);
+}
+@mixin h-center ($position: absolute, $h-percent: 50%) {
+	position: $position;
+	top: $h-percent;
+	transform: translateY(-$h-percent);
+}
+
+// =======================================
+// Skip Navigation
+// =======================================
+.blind {
+	position: relative;
+	z-index: 100;
+	display: block;
+	overflow: hidden;
+	font-size: 0;
+	text-align: center;
+	width: 1px;
+	height: 1px;
+	line-height: 0;
+	margin: 0 -1px -1px 0;
+	&:focus, &:active, &:hover {
+		font-size: 12px;
+		font-weight: bold;
+		color: #fff;
+		text-decoration: inherit;
+		width: 100%;
+		height: 30px;
+		line-height: 30px;
+		margin: 0;
+		background: $bg-default-purple;
+	}
+}
+
+// =======================================
+// Checkbox Style
+// =======================================
+// input [type=checkbox] & [type=radio] 감추기
+.kalypto {
+	display: none;
+}
+.kalypto-label {
+	font-size: 12px;
+	vertical-align: super;
+	cursor: pointer;
+}
+// Kalypto.checked.js 자동 생성 태그 Style 적용
+.k_toggle {
+	display: inline-block;
+	font-family: FontAwesome;
+	width: 19px;
+	height: 19px;
+	border: 1px solid $border-gray;
+	margin-right: 4px;
+	// border-radius: 3px;
+	background: #fff;
+}
+.k_toggle.checked:before {
+	float: left;
+	font-family: FontAwesome;
+	font-size: 14px;
+	color: $font-color-purple;
+	padding-left: 2px;
+	padding-right: 2px;
+	line-height: 1.25;
+	content: '\f00c';
+}
+input[type=checkbox] {
+	display: none;
+	+ label {
+		span {
+			display: inline-block;
+			min-width: 85px;
+			height: $base-line-height * 2;
+			line-height: $base-line-height * 2;
+			text-align: center;
+			background: $bg-default;
+			border: 1px solid $border-gray;
+			cursor: pointer;
+		}
+	}
+	&:checked {
+		+ label span {
+			background: #fff;
+			border: 1px solid $border-purple;
+		}
+		+ label span {
+			-webkit-transition: background-color 0.4s linear;
+			-o-transition: background-color 0.4s linear;
+			-moz-transition: background-color 0.4s linear;
+			transition: background-color 0.4s linear;
+		}
+	}
+	+ label span {
+		-webkit-transition: background-color 0.4s linear;
+		-o-transition: background-color 0.4s linear;
+		-moz-transition: background-color 0.4s linear;
+		transition: background-color 0.4s linear;
+	}
+}
+
+// =======================================
+// Radiobox Style
+// =======================================
+.radiobox {
+	@extend .checkbox;
+}
+// Kalypto.checked.js 자동 생성 태그 Style 적용
+.k_toggleR {
+	border-radius: 10px;
+	@extend .k_toggle;
+}
+.k_toggleR.checked:before {
+	@extend .k_toggle.checked:before;
+	font-size: 12px;
+	content: '\f111';
+}
+input[type=radio] {
+	display: none;
+	+ label {
+		span {
+			display: inline-block;
+			min-width: 85px;
+			height: $base-line-height * 2;
+			line-height: $base-line-height * 2;
+			text-align: center;
+			background: $bg-default;
+			border: 1px solid $border-gray;
+			cursor: pointer;
+		}
+	}
+	&:checked {
+		+ label span {
+			background: #fff;
+			border: 1px solid $border-purple;
+		}
+		+ label span {
+			-webkit-transition: background-color 0.4s linear;
+			-o-transition: background-color 0.4s linear;
+			-moz-transition: background-color 0.4s linear;
+			transition: background-color 0.4s linear;
+		}
+	}
+	+ label span {
+		-webkit-transition: background-color 0.4s linear;
+		-o-transition: background-color 0.4s linear;
+		-moz-transition: background-color 0.4s linear;
+		transition: background-color 0.4s linear;
+	}
+}
+
+// =======================================
+// Input Group Style
+// =======================================
+input, select, textarea {
+	height: 30px;
+	padding: 0 10px;
+	border: 1px solid $border-gray;
+	box-sizing: border-box;
+}
+
+// fontAwesome 달력 아이콘을 표시
+input {
+	&[type=date] {
+		position: relative;
+		&:before {
+			position: absolute;
+			top: 0;
+			right: 10px;
+			@include fa ($icon: "\f073", $fz: 18);
+			color: $font-color-label;
+		}
+	}
+	&[type=search] {
+		box-sizing: border-box;
+	}
+}
+// 스핀 버튼 (상하 버튼)을 숨기기
+input[type=date]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+// 무 입력시 년 / 월 / 일을 / 비우기
+input[type=date]::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+input[type=date]::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+input[type=date]::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+	color: transparent;
+}
+input[type=date]::-webkit-datetime-edit-text {
+	color: inherit;
+}
+// clear 버튼 숨기기
+input[type=date]::-webkit-clear-button {
+	-webkit-appearance: none;
+}
+// 달력의 표시 (▼)를 숨기기
+input[type=date]::-webkit-calendar-picker-indicator {
+	color: transparent;
+	position: relative;
+	&:hover, &:focus &:active {
+		background-color: transparent;
+	}
+}
+// fontAwesome 달력 아이콘을 표시
+input[type=date]::-webkit-calendar-picker-indicator:before {
+	width: 18px;
+	line-height: 30px;
+}
+
+// =======================================
+// Select Group Style
+// =======================================
+
+// IE 10, 11의 네이티브 화살표 숨기기
+select::-ms-expand {
+	display: none;
+}
+
+.select-style {
+	background: #fff;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	&:before {
+		position: absolute;
+		top: 1px;
+		right: 10px;
+		@include fa ($icon: "\f107", $fz: 18);
+		color: $font-color-label;
+		pointer-events: none;
+	}
+	> select {
+		width: 100%;
+		padding-right: 30px;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background-color: transparent;
+		border-radius: 0;
+		position: relative;
+		cursor: pointer;
+		z-index: 10;
+	}
+}
+
+// =======================================
+// Background Style
+// =======================================
+%bg-common {
+	background: {
+		image: url("/Common/images/common/squairy_light.png");
+	}
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		background: {
+			image: url("/Common/images/common/squairy_light_@2X.png");
+			size: 200px 200px;
+		}
+	}
+}
+
+// =======================================
+// Table Style
+// =======================================
+.table-set {
+	width: 100%;
+	caption {
+		display: none;
+	}
+	thead {
+		tr {
+			display: none;
+			th {
+				word-break:break-all;
+			}
+		}
+	}
+	tbody {
+		tr {
+			border-top: 1px solid $border-purple;
+			&:last-child {
+				border-bottom: 1px solid $border-purple;
+			}
+			th {
+				font-size: 12px;
+				word-break: normal;
+				border-bottom: 1px solid #c5c5c5;
+				word-break:break-all;
+			}
+			td {
+				position: relative;
+				display: block;
+				font-size: 12px;
+				text-align: left;
+				word-break: normal;
+				width: 100%;
+				line-height: 25px;
+				padding-top: 0;
+				padding-bottom: 0;
+				padding-left: 150px;
+				word-break:break-all;
+				&:before {
+					position: absolute;
+					left: 0;
+					font-size: 12px;
+					font-weight: bold;
+					color: $font-color-table-th;
+					width: 130px;
+					height: 100%;
+					padding-left: 20px;
+					background: $table-th-bg-color;
+				}
+			}
+		}
+	}
+}
+.table-set {
+	@include susy-breakpoint($tablet) {
+		width: 100%;
+		th, td {
+			text-align: center;
+			height: $base-line-height * 2;
+			padding: 5px 10px;
+		}
+		thead {
+			tr {
+				display: table-row;
+				border-bottom: 1px solid #c5c5c5;
+				th {
+					font-size: 12px;
+					font-weight: bold;
+					color: $font-color-table-th;
+					background: $table-th-bg-color;
+				}
+			}
+		}
+		tbody {
+			tr {
+				border-top: none;
+				border-bottom: 1px solid #c5c5c5;
+				&:last-child {
+					border-bottom: 1px solid #c5c5c5;
+				}
+				td {
+					display: table-cell;
+					width: auto;
+					font-size: inherit;
+					text-align: center;
+					line-height: auto;
+					padding-left: 10px;
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+.responsive-table {
+	.responsive {
+		caption {
+			display: none;
+		}
+		th, td {
+			position: relative;
+			overflow: hidden;
+			font-size: 12px;
+			text-align: center;
+			white-space: nowrap;
+			min-width: 60px;
+			height: $base-line-height;
+			padding: 5px 20px;
+		}
+		th:first-child, td:first-child, &.pinned td {
+			display: none;
+		}
+		thead {
+			tr {
+				border-bottom: 1px solid #c5c5c5;
+				th {
+					font-size: 12px;
+					font-weight: bold;
+					color: $font-color-table-th;
+					background: $table-th-bg-color;
+				}
+			}
+		}
+		tbody {
+			tr {
+				border-bottom: 1px solid #c5c5c5;
+				td {
+					text-align: center;
+					padding-left: 10px;
+				}
+			}
+		}
+	}
+	div.table-wrapper {
+		position: relative;
+		margin-bottom: 20px;
+		overflow: hidden;
+		border-top: 1px solid #c5c5c5;
+		border-right: 1px solid #c5c5c5;
+		div.scrollable {
+			margin-left: 30%; // 틀 고정 컬럼 사이즈
+			overflow: scroll;
+			overflow-y: hidden;
+			> .responsive {
+				width: 100%;
+			}
+		}
+		div.pinned {
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: #fff;
+			width: 30%; // 틀 고정 컬럼 사이즈
+			overflow: hidden;
+			overflow-x: scroll;
+			border-left: 1px solid #c5c5c5;
+			border-right: 1px solid #c5c5c5;
+			table {
+				width: 100%;
+				caption {
+					display: none;
+				}
+				tr {
+					border-bottom: 1px solid #c5c5c5;
+					th, td {
+						font-size: 12px;
+						text-align: center;
+						height: $base-line-height;
+						padding: 5px 10px;
+						white-space: nowrap;
+					}
+				}
+				thead {
+					tr {
+						th {
+							font-weight: bold;
+							color: $font-color-table-th;
+							background: $table-th-bg-color;
+						}
+					}
+				}
+			}
+			td:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+}
+.responsive-table {
+	@include susy-breakpoint($mobile) {
+		div.table-wrapper {
+			div.scrollable {
+				margin-left: 20%; // 틀 고정 컬럼 사이즈
+			}
+			div.pinned {
+				width: 20%; // 틀 고정 컬럼 사이즈
+			}
+		}
+	}
+}
+.responsive-table {
+	@include susy-breakpoint($tablet) {
+		overflow-x: auto;
+		.responsive {
+				min-width: 320px;
+				max-width: 960px;
+				width: 100%;
+			th, td {
+				font-size: inherit;
+				height: $base-line-height * 2;
+				padding: 5px 10px;
+			}
+			th:first-child, td:first-child, &.pinned td {
+				display: table-cell;
+			}
+			tbody {
+				tr {
+					border-top: none;
+				}
+			}
+		}
+	}
+}
+
+// =======================================
+// Paging Style
+// =======================================
+.paging {
+	text-align: center;
+	padding-top: $base-line-height;
+	button {
+		min-width: 32px;
+		height: 31px;
+		border: 1px solid $border-gray;
+		vertical-align: bottom;
+		margin-left: -1px;
+		.fa-caret-left, .fa-caret-right {
+			font-size: 16px;
+			text-align: center;
+			&:before {
+				position: relative;
+				top: 1px;
+			}
+		}
+		.fa-backward, .fa-forward {
+			font-size: 12px;
+			text-align: center;
+			&:before {
+				position: relative;
+				top: 0px;
+			}
+		}
+		.fa-caret-left, .fa-backward {
+			&:before {
+				left: 0px;
+			}
+		}
+		.fa-caret-right, .fa-forward {
+			&:before {
+				right: -1px;
+			}
+		}
+		&:hover, &:focus {
+			background: $table-th-bg-color;
+			a {
+				color: $font-color-paging;
+			}
+		}
+		&.default {
+			color: $font-color-paging;
+			background: $table-th-bg-color;
+			cursor: inherit;
+		}
+	}
+	span {
+		display: inline-block;
+		min-width: 32px;
+		height: 31px;
+		margin-left: -1px;
+		padding: 0 5px;
+		border: 1px solid $border-gray;
+		a {
+			display: inline-block;
+			width: 100%;
+			line-height: 31px;
+		}
+		&:hover, &:focus {
+			background: $table-th-bg-color;
+			a {
+				color: $font-color-paging;
+			}
+		}
+		&:active, &.active {
+			background: $bg-default-purple;
+			border: 1px solid $border-purple;
+			a {
+				font-weight: bold;
+				color: #fff;
+			}
+		}
+	}
+}
+
+// =======================================
+// Aside Navigation Style
+// =======================================
+.mobile-menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 300px;
+	margin-right: -300px;
+	z-index: 100;
+	background: $bg-default-purple;
+	-webkit-box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.8);
+	box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.8);
+}
+.mobile-menu-dim {
+	&.open {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		-webkit-transition: border-width 0.3s, background-color 0.3s;
+		transition: border-width 0.3s, background-color 0.3s;
+		z-index: 99;
+	}
+	&.close {
+		display: none;
+	}
+}
+
+// =======================================
+// Content Layout Style
+// =======================================
+@mixin sub-title ($fz: 12px, $fw: bold, $ta: left, $mb: 4px) {
+	font-size: $fz;
+	font-weight: $fw;
+	text-align: $ta;
+	color: $font-color-purple;
+	margin-bottom: $mb;
+}
+// 서브 상단 진행상황 스타일
+.progress {
+	width: 100%;
+	height: 40px;
+	overflow: hidden;
+	background: $bg-default-purple;
+	.wrap {
+		position: relative;
+		text-align: left;
+		> li {
+			position: relative;
+			display: inline;
+			color: #3d0c4b;
+			line-height: 40px;
+			padding-left: 20px;
+			padding-right: 10px;
+			&.active {
+				color: #dfbde9;
+				font-weight: bold;
+				span {
+					position: relative;
+					float: right;
+					display: block;
+				}
+			}
+			&:before {
+				position: absolute;
+				left: 0;
+				font-family: 'FontAwesome';
+				content: "\f0a9";
+				font-size: 20px;
+			}
+			> span {
+				display: none;
+			}
+		}
+		@include susy-breakpoint($tablet, 8) {
+			text-align: center;
+			> li {
+				display: inline-block;
+				padding-left: 50px;
+				padding-right: 40px;
+				&:before {
+					content: "\f0a9";
+				}
+				&:first-child {
+					&:before {
+						content: "";
+					}
+				}
+				&.active {
+					span {
+						float: none;
+					}
+				}
+				> span {
+					display: inline-block;
+				}
+			}
+		}
+		@include susy-breakpoint($desktop, 12) {
+			> li {
+				padding-left: 70px;
+				padding-right: 60px;
+			}
+		}
+	}
+}
+// 서브 상단 컬럼 갯 수
+.title-btn-bg {
+	position: relative;
+	@include span(full);
+	background: $bg-default-purple;
+	border-top: 1px solid #a547c0;
+	clear: both;
+	.title-btn {
+		padding: 0;
+		line-height: $base-line-height * 2;
+		> h3 {
+			@include wh-center;
+			font-size: 100%;
+			color: #eade25;
+		}
+		> a {
+			font-size: 12px;
+			color: #fff;
+			text-align: center;
+			height: $base-line-height * 2;
+			padding: 0 10px;
+			border-right: 1px solid #b568cb;
+			&:focus, &.selected {
+				color: $font-color-yellow;
+			}
+			&:last-child {
+				border-right: 0;
+			}
+		}
+		@include susy-breakpoint(600px) {
+			> a {
+				font-size: 14px;
+			}
+		}
+		@include susy-breakpoint(700px) {
+			padding-left: 20px;
+			padding-right: 20px;
+			> h3 {
+				font-size: inherit;
+			}
+			> a {
+				font-size: 16px;
+			}
+		}
+	}
+}
+// 아이템 그룹 배치 (버튼, 체크박스, 라이오버튼 등)
+.line-group-set {
+	overflow: hidden;
+	.item-group {
+		> li {
+			float: left;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			@include span(full);
+			&:first-child {
+				margin-top: 10px;
+			}
+			&.select-style:before {
+				top: 8px;
+			}
+			> * {
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+			}
+			button {
+				font-size: 16px !important;
+			}
+			.search {
+				@extend .btn-default;
+				font-size: 16px;
+				.fa-search {
+					font-size: 18px;
+					vertical-align: baseline;
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}
+.line-group-set {
+	.item-group {
+		@include susy-breakpoint($tablet) {
+			@include layout(8 8px/68px);
+			> li {
+				@include gallery(4 of 8);
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+		@include susy-breakpoint($desktop) {
+			@include layout(12 10px/74px);
+			> li {
+				@include gallery(3 of 12)
+			}
+		}
+	}
+}
+
+// 날자 조건 그룹 배치
+.line-group-set {
+	.date-group {
+		@include layout(2 8px/136px);
+		> li {
+			margin-bottom: 10px;
+			&:nth-of-type(2) {
+				text-align: center;
+			}
+			&:nth-of-type(4) {
+				margin-bottom: 0;
+			}
+			> input, > button, > select {
+				height: 40px;
+				line-height: 40px;
+			}
+			> button[class^="date-"] {
+				width: 32%;
+				margin-right: 2%;
+				@extend .btn-cancle;
+				&.selected {
+					@extend .btn-selected;
+				}
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			input[class$="-day"] {
+				width: 47.5%;
+			}
+			.start-day {
+				float: left;
+			}
+			.end-day {
+				float: right;
+			}
+		}
+	}
+}
+.line-group-set {
+	.date-group {
+		@include susy-breakpoint($tablet) {
+			@include layout(8 8px/68px);
+			> li {
+				button[class^="date-"] {
+					float: left;
+				}
+				&:nth-of-type(1) {
+					@include span(4);
+				}
+				&:nth-of-type(2) {
+					@include span(4);
+					@include last;
+				}
+			}
+		}
+	}
+}
+
+// 별점(★☆) 버튼
+span.star {
+	color: $font-color-purple;
+	.fa {
+		margin-right: 4px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+// 리스트 더보기 버튼
+.btn-more {
+	width: 235px;
+	font-size: 12px;
+	line-height: 28px;
+	border: 1px solid $border-gray;
+	clear: both;
+	@include w-center ($position: relative);
+	i.fa {
+		margin-left: 10px;
+		vertical-align: text-top;
+	}
+	@include susy-breakpoint($mobile, 6) {
+		@include span(6);
+	}
+	@include susy-breakpoint($tablet, 8) {
+		@include span(8);
+	}
+	@include susy-breakpoint($desktop, 12) {
+		// @include span(6 at 4);
+		width: 490px;
+	}
+}
+// 자주 사용 아이콘 스타일
+[class^="selected-"] {
+	font-size: 14px;
+	padding-left: 40px;
+	position: relative;
+}
+.selected-day:before {
+	@include fa($icon: "\f073", $fz: 20);
+	position: absolute;
+	top: -2px;
+	left: 0;
+}
+.selected-choice:before {
+	@include fa($icon: "\f0c4", $fz: 20);
+	position: absolute;
+	top: -6px;
+	left: 0;
+}
+.selected-time:before {
+	@include fa($icon: "\f017", $fz: 24);
+	position: absolute;
+	top: -5px;
+	left: 0;
+}
+.selected-designer:before {
+	font-family: 'iconfont';
+	content: '\E001';
+	font-size: 20px;
+	position: absolute;
+	left: 0;
+}

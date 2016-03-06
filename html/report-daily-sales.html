@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--#include file="_inc/_top-settings.html"-->
+<!-- <script src="http://zurb.com/playground/projects/responsive-tables/responsive-tables.js"></script> -->
+
+<!-- Skip Navigation -->
+<!--#include file="_inc/_skip-navigation.html"-->
+<!-- / Skip Navigation End -->
+
+<!-- Header Area -->
+<!--#include file="_inc/_header.html"-->
+<!-- / Header Area End -->
+
+<!-- Contents Area-->
+<main id="container">
+	<!-- 페이지 전환 버튼 -->
+	<div class="report-title-bg">
+		<div class="title-btn wrap">
+			<a class="selected" href="report-daily-sales.html">Daily <span>Sales</span></a><!-- 선택된 메뉴에 class="selected" 삽입 -->
+			<a href="report-daily-sales.html">Com<span>mission</span></a>
+			<a href="report-daily-sales.html">Sales Cash <span>In/Out</span></a>
+			<a href="report-daily-sales.html">Tax <span>Summary</span></a>
+			<a href="report-daily-sales.html">Tax <span>Detail</span></a>
+		</div>
+	</div>
+	<!-- / 페이지 전환 버튼 End -->
+	<!-- Store Announcement -->
+	<div class="sub-container wrap">
+		<!-- 아이템 그룹 배치 -->
+		<div class="line-group-set">
+			<!-- 날자 단위별 보기 -->
+			<ul class="date-group">
+				<li><button class="date-day selected">Day</button><button class="date-week">Week</button><button class="date-month">Month</button></li><!-- 선택된 날자에 class="selected" 삽입 -->
+				<li><input type="date" class="start-day" required>~<input type="date" class="end-day" required></li>
+			</ul>
+			<!-- / 날자 단위별 보기 End -->
+			<!-- 아이템 라인 그룹 -->
+			<ul class="item-group">
+				<li class="select-style">
+					<select>
+						<option value="">All Store</option>
+						<option value="">Store 1</option>
+						<option value="">Store 2</option>
+						<option value="">Store 3</option>
+						<option value="">Store 4</option>
+					</select>
+				</li>
+				<li class="select-style">
+					<select>
+						<option value="">Status</option>
+						<option value="">Confirm</option>
+						<option value="">Standby</option>
+						<option value="">Cancel</option>
+					</select>
+				</li>
+				<li>
+					<input type="search" aria-label="Detail Search">
+				</li>
+				<li>
+					<button class="search"><i class="fa fa-search"></i>Search</button>
+				</li>
+			</ul>
+			<!-- / 아이템 라인 그룹 End -->
+		</div>
+		<!-- 아이템 그룹 배치 End -->
+		<!-- Table list Group -->
+		<div class="responsive-table">
+			<table class="responsive">
+				<thead>
+					<tr>
+						<th><i class="fa fa-star"></i></th>
+						<th>UpDate</th>
+						<th>Period</th>
+						<th>Store</th>
+						<th>Subject</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><i class="fa fa-star"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+					<tr>
+						<td><i class="fa fa-star-o"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+					<tr>
+						<td><i class="fa fa-star"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+					<tr>
+						<td><i class="fa fa-star-o"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+					<tr>
+						<td><i class="fa fa-star"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+					<tr>
+						<td><i class="fa fa-star-o"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+					<tr>
+						<td><i class="fa fa-star-o"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+					<tr>
+						<td><i class="fa fa-star"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+					<tr>
+						<td><i class="fa fa-star-o"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+					<tr>
+						<td><i class="fa fa-star"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+					<tr>
+						<td><i class="fa fa-star-o"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+					<tr>
+						<td><i class="fa fa-star-o"></i></td>
+						<td>07/22/ 2015</td>
+						<td>07/22/2015 ~ 08/22/2015</td>
+						<td>Suite Styles Salon</td>
+						<td>Barbecue Party</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- / Table list Group End -->
+	</div>
+	<!-- / Store Announcement End -->
+</main>
+<!-- / Contents Area End-->
+
+<!-- Footer Area -->
+<!--#include file="_inc/_footer.html"-->
+<!-- / Footer Area End -->
+
+<!-- Add Schedule Popup -->
+<!--#include file="/_popup/_pop-subject.html"-->
+<!-- / Add Schedule Popup End -->
+
+<!-- windows XP 또는 ie9 이하 브라우저 업그레이드 권장 안내 -->
+<!--#include file="_inc/_ie.html"-->
+
+<!-- Javascript & jQuery Plugin 압축 -->
+<!--#include file="_inc/_javascript.html"-->
+</body>
+</html>

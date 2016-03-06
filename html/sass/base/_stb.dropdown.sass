@@ -1,0 +1,54 @@
+.stb-select-container
+	position: relative
+	display: inline-block
+	float: left
+	min-width: 120px
+	height: 30px
+	border: 1px solid $border-gray
+	padding-left: 8px
+	padding-right: 25px
+	box-sizing: border-box
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	text-align: left
+	cursor: pointer
+	> select
+		display: none
+	> span
+		display: inline-block
+		max-width: 100%
+		line-height: 30px
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+	&::after
+		font-family: FontAwesome
+		content: '\f107'
+		font-size: 16px
+		position: absolute
+		top: 2px
+		right: 8px
+		opacity: 0.5
+	.stb-select
+		position: absolute
+		left: 0px
+		top: 29px
+		z-index: 10
+		width: 100%
+		outline: 1px solid $border-gray
+		border-top: 0
+		background: white
+		overflow-y: auto
+		> li
+			width: 100%
+			line-height: 20px
+			padding: 5px 10px
+			color: $font-default
+			opacity: 0.5
+			&:hover
+				opacity: 1
+				background: #dfdfdf

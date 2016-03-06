@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<!--#include file="_inc/_top-settings.html"-->
+
+<!-- Skip Navigation -->
+<!--#include file="_inc/_skip-navigation.html"-->
+<!-- / Skip Navigation End -->
+
+<!-- Header Area -->
+<!--#include file="_inc/_header.html"-->
+<!-- / Header Area End -->
+
+<!-- Contents Area-->
+<main id="container">
+	<!-- Sign up -->
+	<div class="wrap">
+		<div class="sign-up">
+			<h5>Sign Up</h5>
+			<div class="sign-up-box">
+				<dl>
+					<dt class="star">Login ID</dt><!--Login ID-->
+					<dd><input type="email" placeholder="E-Mail" id="EMAIL"></dd>
+					<dt class="none">Confirm</dt><!--Confirm email-->
+					<dd><a class="confirm-button" id="btnDuplicateChk">Confirm</a></dd><!--Confirm-->
+					<dt class="star">Password</dt><!--Password-->
+					<dd><input type="password" aria-label="Password" id="PW"></dd>
+					<dt class="none">Confirm Password</dt><!--Confirm Password-->
+					<dd><input type="password" placeholder="Confirm Password" aria-label="Confirm Password" id="CONFIRM_PW"></dd>
+					<dt class="star">First Name</dt><!--First name-->
+					<dd><input type="text" aria-label="First Name" id="FIRSTNAME"></dd>
+					<dt class="star">Last Name</dt><!--Last name-->
+					<dd><input type="text" aria-label="Last Name" id="LASTNAME"></dd>
+					<dt class="star">Mobile Phone</dt><!--Moblie Phone-->
+					<dd><input type="tel" aria-label="Phone Number" id="MOBILE"></dd>
+					<dt>Gender</dt>
+					<dd><input type="radio" id="Maie" name="Gender" checked><label for="Maie"><span>Maie</span></label><input type="radio" id="Female" name="Gender"><label for="Female"><span>Female</span></label></dd>
+				</dl>
+				<dl>
+					<dt>Picture</dt><!--Picture-->
+					<dd><div class="profile"><i class="iconfont iconfont-designer"></i></div></dd><!-- 프로필 이미지가 없는 경우-->
+					<!-- <dd><div class="profile"><img src="/Common/images/salon/salon1.jpg" alt=""></div></dd> --> <!-- 프로필 이미지가 있는 경우 -->
+					<dt class="none">Picture Upload</dt><!--Picture Upload-->
+					<dd><a class="upload-button" id="btnDuplicateChk">Upload</a></dd>
+					<dt>Address</dt><!--Address-->
+					<dd><input type="text" aria-label="Address" id="ADDRESS"></dd>
+					<dt>City</dt><!--City-->
+					<dd><input type="text" aria-label="City" id="CITY" readonly="readonly" class="city address"></dd>
+					<dt>State</dt><!--State-->
+					<dd><input type="text" aria-label="State" id="STATE" readonly="readonly" class="state address"></dd>
+					<dt>ZIP Code</dt><!--ZIP Code-->
+					<dd><input type="text" aria-label="Zip-code" id="ZIPCODE"></dd>
+					<dt>Use</dt><!--Use-->
+					<dd>
+					<input type="radio" value="0" id="USE_Y" name="USE" checked="checked"><label for="USE_Y"><span>Y</span></label><input type="radio" value="1" id="USE_N" name="USE"><label for="USE_N"><span>N</span></label>
+					</dd>
+				</dl>
+			</div>
+			<p>By clicking ths buttion below, You agree to the Up Tab Salon <input class="kalypto" type="checkbox" id="user-agreenemt"><a href="">User Agreenemt</a> and <a href="">Privacy Policy.</a></p>
+			<p>Alredy a UP Tab Salon Member? <a href="/" class="trigger-pop-login" data-target=".popup-layer.pop-login">Log in</a></p>
+			<div class="btn-set">
+				<a href="/" class="submit-button">Submit</a>
+				<a href="/" class="clear-button">Clear</a>
+			</div>
+		</div>
+	</div>
+	<!-- / Sign up End -->
+</main>
+<!-- / Contents Area End-->
+
+<!-- Footer Area -->
+<!--#include file="_inc/_footer.html"-->
+<!-- / Footer Area End -->
+
+<!-- Login Popup -->
+<!--#include file="_popup/_pop-login.html"-->
+<!-- / Login Popup End -->
+
+<!-- windows XP 또는 ie9 이하 브라우저 업그레이드 권장 안내 -->
+<!--#include file="_inc/_ie.html"-->
+
+<!-- Javascript & jQuery Plugin 압축 -->
+<!--#include file="_inc/_javascript.html"-->
+</body>
+</html>

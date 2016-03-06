@@ -1,0 +1,19 @@
+// =======================================
+// Fonts System
+// =======================================
+
+// Nanum Gothic
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+// Language
+html {
+	body {
+		color: $font-default;
+	}
+	&:lang(ko) body {
+		font: 14px/1.5 'Nanum Gothic', NanumGothic, Verdana, Arial, sans-serif;
+	}
+	&:lang(en) body {
+		font: 14px/1.5 Verdana, Arial, sans-serif;
+	}
+}

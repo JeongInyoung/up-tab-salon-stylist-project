@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--#include file="_inc/_top-settings.html"-->
+
+<!-- Skip Navigation -->
+<!--#include file="_inc/_skip-navigation.html"-->
+<!-- / Skip Navigation End -->
+
+<!-- Header Area -->
+<!--#include file="_inc/_header.html"-->
+<!-- / Header Area End -->
+
+<!-- Contents Area-->
+<main id="container">
+	<!-- 페이지 전환 버튼 -->
+	<div class="schedule-title-bg">
+		<div class="title-btn wrap">
+			<a class="selected" href="schedule-appointment-schedule.html">Appointment <span>Schedule</span></a><!-- 선택된 메뉴에 class="selected" 삽입 -->
+			<a href="schedule-my-schedule.html">My Schedule</a>
+			<a href="schedule-history.html">History</a>
+		</div>
+	</div>
+	<!-- / 페이지 전환 버튼 End -->
+	<!-- Schedule : My Schedule -->
+	<div class="appointment-schedule-list wrap">
+		<!-- 날자 단위별 보기 -->
+		<div class="line-group-set">
+			<ul class="line-group-01">
+				<li><button class="date-day selected">Day</button><button class="date-week">Week</button><button class="date-month">Month</button></li><!-- 선택된 날자에 class="selected" 삽입 -->
+				<li><input type="date" class="start-day" required>~<input type="date" class="end-day" required></li>
+			</ul>
+			<ul class="line-group-02">
+				<li class="select-style">
+					<select>
+						<option value="">All Store</option>
+						<option value="">Store 1</option>
+						<option value="">Store 2</option>
+						<option value="">Store 3</option>
+						<option value="">Store 4</option>
+					</select>
+				</li>
+				<li class="select-style">
+					<select>
+						<option value="">Status</option>
+						<option value="">Confirm</option>
+						<option value="">Standby</option>
+						<option value="">Cancel</option>
+					</select>
+				</li>
+				<li>
+					<input type="search" aria-label="Detail Search">
+				</li>
+				<li>
+					<button class="appointment-schedule-search"><i class="fa fa-search"></i>Search</button>
+				</li>
+			</ul>
+		</div>
+		<!-- / 날자 단위별 보기 End -->
+		<p class="total">Total : 25 </p>
+		<!-- Table list Group -->
+		<table class="table-set">
+			<caption>Schedule : My Schedule</caption>
+			<colgroup>
+				<col>
+				<col>
+				<col>
+				<col>
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Date/Time</th>
+					<th>Store/ Service</th>
+					<th>Customer</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>07/22/ 2015 <p class="time">1:00PM~2:00PM</p></td>
+					<td><a href="/" class="trigger-pop-store" data-target=".popup-layer.pop-store">Suite Styles Salon</a> <p class="service">Hair Color and Other</p></td>
+					<td class="customer"><i class="fa fa-user"></i><a href="/" class="trigger-pop-customer" data-target=".popup-layer.pop-customer">Michael R</a></td>
+					<td>Confirm</td>
+				</tr>
+				<tr>
+					<td class="standby">07/22/ 2015 <p class="time">1:00PM~2:00PM</p></td> <!-- 예약 미확인 상태 class="standby" 추가 -->
+					<td class="standby"><a href="/" class="trigger-pop-store" data-target=".popup-layer.pop-store">Suite Styles Salon</a> <p class="service">Hair Color and Other</p></td>
+					<td class="customer standby"><i class="fa fa-user"></i><a href="/" class="trigger-pop-customer" data-target=".popup-layer.pop-customer">Michael R</a></td>
+					<td class="standby">Standby</td>
+				</tr>
+				<tr>
+					<td>07/22/ 2015 <p class="time">1:00PM~2:00PM</p></td>
+					<td><a href="/" class="trigger-pop-store" data-target=".popup-layer.pop-store">Suite Styles Salon</a> <p class="service">Hair Color and Other</p></td>
+					<td class="customer"><i class="fa fa-user"></i><a href="/" class="trigger-pop-customer" data-target=".popup-layer.pop-customer">Michael R</a></td>
+					<td>Confirm</td>
+				</tr>
+				<tr>
+					<td>07/22/ 2015 <p class="time">1:00PM~2:00PM</p></td>
+					<td><a href="/" class="trigger-pop-store" data-target=".popup-layer.pop-store">Suite Styles Salon</a> <p class="service">Hair Color and Other</p></td>
+					<td class="customer"><i class="fa fa-user"></i><a href="/" class="trigger-pop-customer" data-target=".popup-layer.pop-customer">Michael R</a></td>
+					<td>Confirm</td>
+				</tr>
+				<tr>
+					<td class="cancel">07/22/ 2015 <p class="time">1:00PM~2:00PM</p></td> <!-- 예약 취소된 상태 class="cancel" 추가 -->
+					<td class="cancel">Suite Styles Salon <p class="service">Hair Color and Other</p></td>
+					<td class="customer cancel"><i class="fa fa-user"></i>Michael R</td>
+					<td class="cancel">Cancel</td>
+				</tr>
+				<tr>
+					<td>07/22/ 2015 <p class="time">1:00PM~2:00PM</p></td>
+					<td><a href="/" class="trigger-pop-store" data-target=".popup-layer.pop-store">Suite Styles Salon</a> <p class="service">Hair Color and Other</p></td>
+					<td class="customer"><i class="fa fa-user"></i><a href="/" class="trigger-pop-customer" data-target=".popup-layer.pop-customer">Michael R</a></td>
+					<td>Confirm</td>
+				</tr>
+				<tr>
+					<td>07/22/ 2015 <p class="time">1:00PM~2:00PM</p></td>
+					<td><a href="/" class="trigger-pop-store" data-target=".popup-layer.pop-store">Suite Styles Salon</a> <p class="service">Hair Color and Other</p></td>
+					<td class="customer"><i class="fa fa-user"></i><a href="/" class="trigger-pop-customer" data-target=".popup-layer.pop-customer">Michael R</a></td>
+					<td>Confirm</td>
+				</tr>
+				<tr>
+					<td class="standby">07/22/ 2015 <p class="time">1:00PM~2:00PM</p></td>
+					<td class="standby"><a href="/" class="trigger-pop-store" data-target=".popup-layer.pop-store">Suite Styles Salon</a> <p class="service">Hair Color and Other</p></td>
+					<td class="customer standby"><i class="fa fa-user"></i><a href="/" class="trigger-pop-customer" data-target=".popup-layer.pop-customer">Michael R</a></td>
+					<td class="standby">Standby</td>
+				</tr>
+				<tr>
+					<td>07/22/ 2015 <p class="time">1:00PM~2:00PM</p></td>
+					<td><a href="/" class="trigger-pop-store" data-target=".popup-layer.pop-store">Suite Styles Salon</a> <p class="service">Hair Color and Other</p></td>
+					<td class="customer"><i class="fa fa-user"></i><a href="/" class="trigger-pop-customer" data-target=".popup-layer.pop-customer">Michael R</a></td>
+					<td>Confirm</td>
+				</tr>
+				<tr>
+					<td class="cancel">07/22/ 2015 <p class="time">1:00PM~2:00PM</p></td>
+					<td class="cancel">Suite Styles Salon <p class="service">Hair Color and Other</p></td>
+					<td class="customer cancel"><i class="fa fa-user"></i>Michael R</td>
+					<td class="cancel">Cancel</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- / Table list Group End -->
+		<!-- Paging -->
+		<div class="paging">
+			<button aria-label="처음으로"><i class="fa fa-backward"></i></button><button aria-label="이전"><i class="fa fa-caret-left"></i></button><span><a href="">1</a></span><span><a href="">2</a></span><span><a href="">3</a></span><span><a href="">4</a></span><span class="active"><a href="">5</a></span><!-- 선택된 상태 class="active" 추가 --><span><a href="">6</a></span><span><a href="">7</a></span><span><a href="">8</a></span><span><a href="">9</a></span><span><a href="">10</a></span><button class="default" aria-label="다음"><i class="fa fa-caret-right"></i></button><!-- 다음 페이지가 없을때 class="default" 추가 --><button class="default" aria-label="끝으로"><i class="fa fa-forward"></i></button><!-- 다음 페이지가 없을때 class="default" 추가 -->
+		</div>
+		<!-- / Paging End -->
+	</div>
+	<!-- / Schedule : My Schedule End -->
+</main>
+<!-- / Contents Area End-->
+
+<!-- Footer Area -->
+<!--#include file="_inc/_footer.html"-->
+<!-- / Footer Area End -->
+
+<!-- windows XP 또는 ie9 이하 브라우저 업그레이드 권장 안내 -->
+<!--#include file="_inc/_ie.html"-->
+
+<!-- Javascript & jQuery Plugin 압축 -->
+<!--#include file="_inc/_javascript.html"-->
+</body>
+</html>

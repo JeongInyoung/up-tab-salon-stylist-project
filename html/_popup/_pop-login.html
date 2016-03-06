@@ -1,0 +1,32 @@
+<div class="popup-layer pop-login" role="alert">
+	<div class="container">
+		<h3 class="popup-title">Login</h3>
+		<a href="#" class="close fa fa-close" role="button" aria-lable="창 닫기"></a>
+		<div class="pop-list">
+			<dl>
+				<dt>User ID/E-mail</dt>
+				<dd><input id="LOGIN_ID" type="text"  maxlength="100"></dd>
+			</dl>
+			<dl>
+				<dt>Password </dt>
+				<dd><input id="LOGIN_PASSWORD" type="password" maxlength="20"></dd>
+			</dl>
+			<dl>
+				<dt>Language </dt>
+				<dd class="select-style">
+					<select id="LANGUAGE" name="LANGUAGE">
+						<option value="en">English</option>
+						<option value="ko">Korea</option>
+					</select>
+				</dd>
+			</dl>
+			<dl>
+				<dd><input class="kalypto" id="CHK_SAVE" name="CHK_SAVE" type="checkbox" value="1" /><input name="CHK_SAVE" type="hidden" value="false" /><label class="kalypto-label" for="CHK_SAVE"> Save User Info</label></dd>
+			</dl>
+			<a class="join-pw" href=""  style="display:none;">Forgot Password?</a>
+			<div class="pop-btn-set">
+				<a class="btn-default" role="button" id="btnLogin2" href="javascript:void(0);">Login</a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,1841 @@
+// =======================================
+// Layout Style
+// =======================================
+#header, #footer, #container {
+	width: 100%;
+}
+#header {
+	position: fixed;
+	height: 40px;
+	background: $bg-nav-depth;
+	z-index: 100;
+	.wrap {
+		> h1 {
+			font-size: 16px;
+			font-weight: normal;
+			color: #fff;
+			line-height: 40px;
+			margin: 0;
+		}
+	}
+}
+#header {
+	.wrap {
+		.top-menu {
+			height: 100%;
+			font-size: 12px;
+			text-align: center;
+			> a {
+				float: left;
+				display: block;
+				color: #ccc;
+				height: 100%;
+				line-height: 40px;
+				padding: 0 20px;
+				i {
+					font-size: 14px;
+					margin-right: 6px;
+					vertical-align: middle;
+				}
+				&:hover, &:focus, &.selected {
+					color: #fff;
+					background: lighten($bg-nav-depth, 20%);
+					&:before {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+#header {
+	.wrap {
+		.mobile-menu {
+			padding: 20px;
+			padding-right: 0;
+			.menu-button {
+				font-size: 12px;
+				color: #fff;
+				margin-bottom: $base-line-height;
+				i.fa {
+					font-size: 18px;
+					padding-right: 6px;
+					vertical-align: top;
+				}
+			}
+			> ul {
+				li {
+					border-bottom: 1px solid #a547c0;
+					a {
+						display: inline-block;
+						line-height: 48px;
+						font-size: 16px;
+						color: #fff;
+						padding: 0 6px;
+						i.fa {
+							font-size: 20px;
+							width: 40px;
+						}
+						&:hover, &:focus, &.active {
+							color: $font-color-yellow;
+						}
+					}
+					> ul {
+						background: #a547c0;
+						padding: 10px 0;
+						li {
+							a {
+								display: inline-block;
+								line-height: 28px;
+								font-size: 14px;
+								padding-left: 46px;
+								&:hover, &:focus, &.active {
+									color: $font-color-yellow;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#header {
+	.wrap {
+		.top-button {
+			text-align: right;
+			margin-top: 5px;
+			.menu-button {
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				color: #ccc;
+				text-align: center;
+				border: 1px solid #999;
+				span {
+					display: none;
+				}
+				&:before {
+					font-family: 'FontAwesome';
+					content: "\f0c9";
+					font-size: 18px;
+					line-height: 29px;
+				}
+			}
+		}
+	}
+}
+#header {
+	.wrap {
+		> h1 {
+			@include span(6);
+			@extend %text-wrap;
+		}
+		.top-menu {
+			display: none;
+		}
+		.top-button {
+			@include span(2 float last);
+			display: inline-block;
+		}
+		@include susy-breakpoint(780px, 8) {
+			> h1 {
+				@include span(2);
+			}
+			.top-menu {
+				display: inline-block;
+				float: right;
+				> a {
+					min-width: 100px;
+				}
+			}
+			.top-button {
+				display: none;
+				@include span(2 float last);
+			}
+		}
+		@include susy-breakpoint($desktop, 12) {
+			> h1 {
+				@include span(2);
+			}
+			.top-menu {
+				> a {
+					min-width: 120px;
+				}
+			}
+			.top-button {
+				@include span(10);
+				@include last;
+			}
+		}
+	}
+}
+#container {
+	position: relative;
+	min-height: 480px;
+	padding-top: 40px;
+	background: #fff;
+	overflow: hidden;
+	clear: both;
+	@include susy-breakpoint($tablet, 8) {
+		min-height: 680px;
+	}
+	@include susy-breakpoint($desktop, 12) {
+		min-height: 750px;
+	}
+	.sub-container {
+		padding-top: 42px;
+		padding-bottom: 42px;
+		overflow: hidden;
+	}
+}
+#footer {
+	position: relative;
+	height: 40px;
+	border-top: 1px solid #fff;
+	background: $bg-default;
+	overflow: hidden;
+	.copyright {
+		font-family: Verdana;
+		font-style: normal;
+		font-size: 12px;
+		text-align: center;
+		line-height: 40px;
+	}
+}
+
+// =======================================
+// index.html (Merchant Login)
+// =======================================
+.login-box {
+	h1 {
+		font-size: 30px;
+		font-weight: normal;
+		text-align: center;
+		margin-bottom: 32px;
+	}
+}
+.login-box {
+	.search-set {
+		display: inline-block;
+		@include span(full);
+		overflow: hidden;
+		margin-bottom: 27px;
+		[class^="tab-"] {
+			display: inline-block;
+			float: left;
+			width: 50%;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			color: #999;
+			background: #fff;
+			&:focus {
+				color: $font-default;
+				background: #fdfdfd;
+			}
+			&.selected {
+				color: #fff;
+				background: $bg-default-purple;
+			}
+		}
+	}
+}
+.login-box {
+	.login-box-set {
+		> li {
+			position: relative;
+			margin-bottom: 10px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			input {
+				font-size: 13px;
+				width: 100%;
+				height: 50px;
+				padding-left: 15px;
+				padding-right: 70px;
+				border: 0px;
+				cursor: default;
+				@include susy-breakpoint($tablet, 8) {
+					font-size: 14px;
+					padding-left: 20px;
+				}
+			}
+			> ul {
+				display: none;
+				max-height: 160px;
+				overflow-y: auto;
+			}
+			.checkbox {
+				text-align: left;
+				margin-bottom: 14px;
+				.store-label {
+					color: #fff;
+				}
+			}
+			.btn-default, .btn-signup {
+				font-size: 24px;
+				width: 100%;
+				height: 50px;
+				margin-left: 0;
+				line-height: 50px;
+			}
+		}
+	}
+}
+.login-box {
+	.login-box-set {
+		> li {
+			button {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 50px;
+				height: 50px;
+				border-left: 1px solid $bg-default;
+				&:before {
+					font-size: 20px;
+					color: $font-default;
+				}
+				&:hover {
+					background: #faf6fb;
+					&:before {
+						color: $bg-default-purple;
+					}
+				}
+				&.btn-flag:before {
+					font-family: 'FontAwesome';
+					content: '\f024';
+				}
+			}
+			button.active {
+				border-top: 3px solid $font-default;
+				border-left: 3px solid $font-default;
+				border-right: 3px solid $font-default;
+				&:before {
+					color: $font-color-purple;
+				}
+			}
+		}
+	}
+}
+.login-box {
+	.login-box-set {
+		> li {
+			.input-clear {
+				position: absolute;
+				top: 0;
+				right: 50px;
+				width: 50px;
+				height: 50px;
+				border-left: 0;
+				&:before {
+					color: #d2d2d2;
+				}
+				&:hover {
+					background: none;
+					&:before {
+						color: $bg-default-purple;
+					}
+				}
+			}
+			.input-clear.active {
+				display: none;
+			}
+		}
+	}
+}
+.login-box {
+	.login-box-set {
+		> li {
+			> ul {
+				> li {
+					background: $font-default;
+					color: #a1a1a1;
+					a {
+						display: block;
+						max-width: 100%;
+						padding: 3px 20px;
+					}
+					&:first-child {
+						padding-top: 12px;
+					}
+					&:last-child {
+						padding-bottom: 12px;
+					}
+					&:hover, &:focus, &.selected {
+						a {
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#container.login-bg {
+	background: $bg-default;
+	padding-bottom: 0;
+	.wrap {
+		padding-top: 22px;
+		padding-bottom: 22px;
+		overflow: hidden;
+		.login-box {
+			@include span(full);
+		}
+		@include susy-breakpoint($tablet, 8) {
+			padding-top: 42px;
+			padding-bottom: 42px;
+			.login-box {
+				@include span(4 at 3);
+				.search-set {
+					display: none;
+				}
+			}
+		}
+		@include susy-breakpoint($desktop, 12) {
+			padding-top: 105px;
+			padding-bottom: 105px;
+			.login-box {
+				@include span(4 at 5);
+			}
+		}
+	}
+}
+
+// =========================================================
+// schedule-appointment-schedule.html (Schedule - Aappointment Schedule)
+// =========================================================
+.schedule-title-bg {
+	@extend .title-btn-bg;
+	.title-btn {
+		> a {
+			@include layout(3 0px/333px);
+			&:nth-of-type(1) {
+				@include span(1);
+				line-height: 1.5;
+				padding-top: 3px;
+				span {
+					display: block;
+				}
+			}
+			&:nth-of-type(2) {
+				@include span(1);
+			}
+			&:nth-of-type(3) {
+				@include span(1);
+				@include last;
+			}
+		}
+	}
+}
+.schedule-title-bg {
+	.title-btn {
+		@include susy-breakpoint(485px) {
+			> a:nth-of-type(1) {
+				line-height: inherit;
+				padding-top: 0;
+				span {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+.appointment-schedule-list {
+	padding-top: $base-line-height * 2;
+	padding-bottom: $base-line-height * 2;
+	overflow: hidden;
+	.total {
+		font-size: 12px;
+		height: 30px;
+		line-height: 30px;
+		clear: both;
+	}
+}
+.appointment-schedule-list {
+	.line-group-set {
+		.line-group-01 {
+			@include layout(2 8px/136px);
+			> li {
+				line-height: 40px;
+				margin-bottom: 10px;
+				&:nth-of-type(2) {
+					text-align: center;
+				}
+				&:nth-of-type(4) {
+					margin-bottom: 0;
+				}
+				> input, > button, > select {
+					height: 40px;
+					line-height: 40px;
+				}
+				> button[class^="date-"] {
+					width: 32%;
+					margin-right: 2%;
+					@extend .btn-cancle;
+					&.selected {
+						@extend .btn-selected;
+					}
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+				input[class$="-day"] {
+					width: 47.5%;
+				}
+				.start-day {
+					float: left;
+				}
+				.end-day {
+					float: right;
+				}
+			}
+		}
+	}
+}
+.appointment-schedule-list {
+	.line-group-set {
+		.line-group-01 {
+			> li {
+				.appointment-schedule-search {
+					@extend .btn-default;
+					font-size: 16px;
+					.fa-search {
+						font-size: 18px;
+						vertical-align: baseline;
+						margin-right: 10px;
+					}
+				}
+			}
+			@include susy-breakpoint($tablet) {
+				@include layout(8 8px/68px);
+				> li {
+					button[class^="date-"] {
+						float: left;
+					}
+					&:nth-of-type(1) {
+						@include span(4);
+					}
+					&:nth-of-type(2) {
+						@include span(4);
+						@include last;
+					}
+				}
+			}
+		}
+	}
+}
+.appointment-schedule-list {
+	.line-group-set {
+		.line-group-02 {
+			@extend .line-group-01;
+			> li {
+				&:nth-of-type(1) {
+					@include span(full);
+				}
+				&:nth-of-type(2) {
+					@include span(full);
+				}
+				&:nth-of-type(3) {
+					@include span(full);
+					input[type=search], input {
+						width: 100%;
+					}
+				}
+				&:nth-of-type(4) {
+					@include span(full);
+					@include last;
+					button {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+.appointment-schedule-list {
+	.line-group-set {
+		@include susy-breakpoint($tablet) {
+			.line-group-02 {
+				@include layout(8 8px/68px);
+				> li {
+					&:nth-of-type(1) {
+						@include span(5);
+					}
+					&:nth-of-type(2) {
+						@include span(3);
+						@include last;
+						margin-bottom: 0;
+					}
+					&:nth-of-type(3) {
+						@include span(5);
+						margin-bottom: 0;
+					}
+					&:nth-of-type(4) {
+						@include span(3);
+						@include last;
+					}
+				}
+			}
+		}
+	}
+}
+.appointment-schedule-list {
+	.line-group-set {
+		@include susy-breakpoint($desktop) {
+			.line-group-02 {
+				@include layout(12 8px/76px);
+				> li {
+					margin-bottom: 0;
+					&:nth-of-type(1) {
+						@include span(3);
+					}
+					&:nth-of-type(2) {
+						@include span(2);
+					}
+					&:nth-of-type(3) {
+						@include span(5);
+					}
+					&:nth-of-type(4) {
+						@include span(2);
+						@include last;
+					}
+				}
+			}
+		}
+	}
+}
+.appointment-schedule-list {
+	.table-set {
+		colgroup {
+			col {
+				&:first-child {
+					width: 150px;
+				}
+				&:last-child {
+					width: 100px;
+				}
+			}
+		}
+		tbody {
+			tr {
+				td {
+					padding-left: 170px;
+					&:before {
+						width: 150px;
+					}
+					&:nth-of-type(1) {
+						font-size: 12px;
+						&:before {
+							content: "Date \A Time";
+							white-space:pre;
+						}
+					}
+					&:nth-of-type(2) {
+						color: $font-color-purple;
+						text-align: left;
+						&:before {
+							content: "Store \A Service";
+							white-space:pre;
+						}
+						.service {
+							color: $font-default;
+						}
+					}
+					&:nth-of-type(3) {
+						text-decoration: underline;
+						&:before {
+							content: "Customer";
+						}
+					}
+					&:nth-of-type(4):before {
+						content: "Status";
+					}
+				}
+			}
+		}
+	}
+}
+.appointment-schedule-list {
+	.table-set {
+		tbody {
+			tr {
+				td.cancel {
+					color: #bfbfbf;
+					text-decoration: line-through;
+					&:last-child {
+						text-decoration: inherit;
+					}
+					.service {
+						color: #bfbfbf;
+					}
+				}
+				td.standby {
+					background: #fefee3;
+					&:last-child {
+						color: $font-color-orange;
+						text-decoration: inherit;
+					}
+				}
+				.stylist {
+					> i {
+						display: none;
+						font-size: 23px;
+						margin-right: 10px;
+					}
+				}
+				.customer {
+					@extend .stylist;
+					> i {
+						font-size: 24px;
+					}
+				}
+			}
+		}
+	}
+}
+.appointment-schedule-list {
+	.table-set {
+		@include susy-breakpoint($tablet) {
+			tbody {
+				tr {
+					td {
+						padding: 6px 10px;
+						&:nth-of-type(1) {
+							line-height: 1.75;
+						}
+						&:nth-of-type(2) {
+							line-height: 1.75;
+						}
+					}
+					.stylist, .customer {
+						> i {
+							display: inline-block;
+							vertical-align: sub;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// =========================================================
+// schedule-my-schedule.html (Schedule - My Schedule)
+// =========================================================
+.my-schedule-list {
+	@extend .appointment-schedule-list;
+	.line-group-set {
+		.line-group-01 {
+			@include layout(2 8px/136px);
+			> li {
+				[class^="btn-"] {
+					width: 100%;
+					i.fa {
+						margin-right: 10px;
+					}
+					&.btn-synck {
+						@extend .btn-default;
+						font-size: 18px;
+					}
+					&.btn-add {
+						@extend .btn-cancle;
+						font-size: 18px;
+						height: 40px;
+						line-height: 40px;
+					}
+				}
+				&:nth-of-type(1) {
+					@include span(1);
+				}
+				&:nth-of-type(2) {
+					@include span(1);
+					@include last;
+				}
+				&:nth-of-type(3) {
+					@include span(full);
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+.my-schedule-list {
+	.line-group-set {
+		@include susy-breakpoint($tablet, 8) {
+			.line-group-01 {
+				@include layout(8 8px/68px);
+				> li {
+					margin-bottom: 0;
+					&:nth-of-type(1) {
+						@include span(2 at 5);
+					}
+					&:nth-of-type(2) {
+						@include span(2 at 7);
+					}
+				}
+			}
+		}
+	}
+}
+.my-schedule-list {
+	.line-group-set {
+		@include susy-breakpoint($desktop) {
+			.line-group-01 {
+				@include layout(12 8px/76px);
+				> li {
+					&:nth-of-type(1) {
+						@include span(2 at 9);
+					}
+					&:nth-of-type(2) {
+						@include span(2 at 11);
+					}
+				}
+			}
+		}
+	}
+}
+.my-schedule-list {
+	.responsive-table {
+		colgroup {
+			col {
+				&:first-child {
+					width: auto;
+				}
+				&:last-child {
+					width: auto;
+				}
+			}
+		}
+		tbody {
+			tr {
+				td {
+					&:nth-of-type(1) {
+						font-size: 12px;
+					}
+					&:nth-of-type(2) {
+						text-align: left;
+						color: inherit;
+						> p[class^="bg-color-"] {
+							font-size: 12px;
+							padding: 0 6px;
+						}
+						@each $num, $bg-color in ('01', #f3bdbd), ('02', #f5e3b4), ('03', #d3eaa5), ('04', #aff0e5), ('05', #aecfed), ('06', #e2baec), ('07', #d9c2c2), ('08', #d1c5a5), ('09', #c2d1a4), ('10', #a2d3cb), ('11', #aebdca), ('12', #c9abd0), ('13', #f1c7ab), ('14', #e6dbbe), ('15', #a7edb1), ('16', #afe0f0), ('17', #cacfed), ('18', #f7badf), ('19', #d6beaf), ('20', #c8c1af), ('21', #a8d2ae), ('22', #afccd5), ('23', #b3b8d9), ('24', #d49bbe) {
+							p.bg-color-#{$num} {
+								background: $bg-color;
+							}
+						}
+					}
+					&:nth-of-type(3) {
+						text-decoration: inherit;
+						> i {
+							font-size: 16px;
+							margin-right: 4px;
+							vertical-align: text-top;
+						}
+					}
+				}
+			}
+		}
+		@include susy-breakpoint($tablet) {
+			tbody {
+				tr {
+					td {
+						padding: 6px 10px;
+						&:nth-of-type(1) {
+							line-height: inherit;
+						}
+						&:nth-of-type(2) {
+							line-height: inherit;
+							> p[class^="bg-"] {
+								max-height: 18px;
+								line-height: 18px;
+								padding: 0 10px;
+								margin-bottom: 10px;
+								&:last-child {
+									margin-bottom: 0;
+								}
+							}
+						}
+						&:nth-of-type(3) {
+							> p {
+								margin-bottom: 6px;
+								&:last-child {
+									margin-bottom: 0;
+								}
+								> i {
+									font-size: 24px;
+									display: inline-block;
+									vertical-align: sub;
+									margin-right: 10px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// =======================================
+// schedule-history.html (Schedule - history)
+// =======================================
+.day-setting {
+	@include layout(3 11px/86px);
+	> button {
+		min-width: 60px;
+		&:nth-of-type(1) {
+			@include span(1);
+		}
+		&:nth-of-type(2) {
+			@include span(1);
+		}
+		&:nth-of-type(3) {
+			@include span(1);
+			@include last;
+		}
+		@extend .btn-cancle;
+		font-size: 12px;
+		line-height: $base-line-height * 2;
+		&:focus, &.selected {
+			@extend .btn-selected;
+			font-size: 12px;
+			min-width: 60px;
+			line-height: $base-line-height * 2;
+		}
+	}
+	.help {
+		@include span(full);
+		margin: 10px 0;
+		font-size: 12px;
+		i.fa {
+			font-size: 18px;
+			vertical-align: middle;
+			margin-right: 6px;
+		}
+	}
+	@include susy-breakpoint(670px) {
+		margin-bottom: 20px;
+		overflow: hidden;
+		> button {
+			min-width: 100px;
+			margin-bottom: 10px;
+			&:nth-of-type(1) {
+				width: auto;
+				margin-right: 10px;
+			}
+			&:nth-of-type(2) {
+				width: auto;
+				margin-right: 10px;
+			}
+			&:nth-of-type(3) {
+				float: left;
+				width: auto;
+				margin-right: 10px;
+			}
+			&:focus, &.selected {
+				min-width: 100px;
+			}
+		}
+		.help {
+			width: auto;
+		}
+	}
+}
+.history-list {
+	padding-top: $base-line-height * 2;
+	padding-bottom: $base-line-height * 2;
+	overflow: hidden;
+	.table-set {
+		tbody {
+			tr {
+				td:nth-of-type(1):before {
+					content: "Date";
+				}
+				td:nth-of-type(2):before {
+					content: "Time";
+				}
+				td:nth-of-type(3) {
+					color: $font-color-purple;
+				}
+				td:nth-of-type(3):before {
+					content: "Salon Name";
+				}
+				td:nth-of-type(4):before {
+					content: "Service";
+				}
+				td:nth-of-type(5):before {
+					content: "Total";
+				}
+				td:nth-of-type(6):before {
+					content: "Status";
+				}
+				td.cancel {
+					color: #bfbfbf;
+					text-decoration: line-through;
+					&:last-child {
+						text-decoration: inherit;
+					}
+				}
+			}
+		}
+	}
+}
+
+// ======================================================
+// announce-store-announcement.html (Schedule - Store Announcement)
+// ======================================================
+.announce-title-bg {
+	@extend .title-btn-bg;
+	.title-btn {
+		> a {
+			@include layout(2 0%/50%);
+			&:first-child {
+				@include span(1);
+			}
+			&:last-child {
+				@include span(1);
+				@include last;
+			}
+		}
+	}
+}
+.store-announcement-list {
+	@extend .my-schedule-list;
+	.table-set {
+		colgroup {
+			col {
+				&:nth-of-type(1) {
+					width: 65px;
+				}
+				&:nth-of-type(2) {
+					width: 150px;
+				}
+				&:last-child {
+					width: auto;
+				}
+			}
+		}
+		thead {
+			tr {
+				th:nth-of-type(1) {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+.store-announcement-list {
+	.table-set {
+		tbody {
+			tr {
+				td {
+					padding-left: 130px;
+					&:before {
+						width: 110px;
+					}
+				}
+				td:nth-of-type(1) {
+					color: $font-color-purple;
+					i.fa {
+						vertical-align: bottom;
+						font-size: 18px;
+					}
+				}
+				td:nth-of-type(2) {
+					color: inherit;
+				}
+				td:nth-of-type(3) {
+					color: inherit;
+					text-decoration: inherit;
+				}
+				td:nth-of-type(5) {
+					color: $font-color-purple;
+				}
+				td:nth-of-type(1):before {
+					content: "Bookmark";
+				}
+				td:nth-of-type(2):before {
+					content: "UpDate";
+				}
+				td:nth-of-type(3):before {
+					content: "Period";
+				}
+				td:nth-of-type(4):before {
+					content: "Store";
+				}
+				td:nth-of-type(5):before {
+					content: "Subject";
+				}
+			}
+		}
+	}
+}
+.store-announcement-list {
+	.table-set {
+		@include susy-breakpoint($tablet) {
+			tbody {
+				tr {
+					td {
+						padding-left: 10px;
+						&:nth-of-type(1) {
+							i.fa {
+								vertical-align: middle;
+							}
+						}
+						&:nth-of-type(2) {
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.store-announcement-list {
+	.line-group-set {
+		.line-group-01 {
+			> li {
+				&:nth-of-type(1) {
+					width: 30%;
+					margin-right: 0;
+					label {
+						i.fa {
+							font-size: 18px;
+							color: $font-color-purple;
+							vertical-align: middle;
+						}
+					}
+				}
+				&:nth-of-type(2) {
+					width: 70%;
+					@include last;
+				}
+				&:nth-of-type(3) {
+					@include span(full);
+					margin-bottom: 10px;
+					input {
+						width: 100%;
+					}
+				}
+				&:nth-of-type(4) {
+					@include span(full);
+					button {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+.store-announcement-list {
+	.line-group-set {
+		@include susy-breakpoint($tablet, 8) {
+			.line-group-01 {
+				@include layout(8 8px/68px);
+				> li {
+					&:nth-of-type(1) {
+						@include span(1 at 1);
+					}
+					&:nth-of-type(2) {
+						@include span(2 at 2);
+					}
+					&:nth-of-type(3) {
+						@include span(3 at 4);
+						margin-bottom: 0;
+					}
+					&:nth-of-type(4) {
+						@include span(2);
+						@include last;
+					}
+				}
+			}
+		}
+	}
+}
+.store-announcement-list {
+	.line-group-set {
+		@include susy-breakpoint($desktop) {
+			.line-group-01 {
+				@include layout(12 8px/76px);
+				> li {
+					&:nth-of-type(1) {
+						@include span(1 at 1);
+					}
+					&:nth-of-type(2) {
+						@include span(3 at 5);
+					}
+					&:nth-of-type(3) {
+						@include span(3 at 8);
+					}
+					&:nth-of-type(4) {
+						@include span(2);
+						@include last;
+					}
+				}
+			}
+		}
+	}
+}
+
+// ======================================================
+// announce-request-time-off.html (Announce -Request Time off)
+// ======================================================
+.request-time-off-list {
+	@extend .my-schedule-list;
+}
+
+// ======================================================
+// setting-alarm-setting.html (Setting - Alarm Setting)
+// ======================================================
+.setting-title-bg {
+	@extend .announce-title-bg;
+}
+.alarm-setting-list {
+	.alarm-setting-save {
+		@extend .btn-default;
+		@include full;
+		height: 40px;
+		line-height: 40px;
+		margin-bottom: 30px;
+	}
+	.table-set {
+		tbody {
+			tr {
+				td {
+					padding-left: 180px;
+					.k_toggle {
+						margin: 0;
+					}
+					&::before {
+						width: 160px;
+					}
+					&:last-child {
+						padding-bottom: 8px;
+					}
+					input[type="number"] {
+						width: 100%;
+					}
+				}
+				td:nth-of-type(1):before {
+					content: "Store Announce";
+				}
+				td:nth-of-type(2):before {
+					content: "Phone Text (SMS)";
+				}
+				td:nth-of-type(3):before {
+					content: "E-mail";
+				}
+				td:nth-of-type(4):before {
+					content: "Alam Time (Hour)";
+				}
+			}
+		}
+	}
+}
+.alarm-setting-list {
+	@include susy-breakpoint($mobile) {
+		.table-set {
+			tbody {
+				tr {
+					td {
+						input[type="number"] {
+							width: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.alarm-setting-list {
+	@include susy-breakpoint($tablet, 8) {
+		.alarm-setting-save {
+			@include span(2);
+			@include last;
+		}
+		.table-set {
+			tbody {
+				tr {
+					td {
+						padding: 0;
+						.k_toggle {
+							margin: 10px 4px;
+							vertical-align: middle;
+						}
+						&:last-child {
+							padding-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.alarm-setting-list {
+	@include susy-breakpoint($desktop, 12) {
+		.alarm-setting-save {
+			@include span(2);
+			@include last;
+		}
+		.table-set {
+			tbody {
+				tr {
+					td {
+						.k_toggle {
+							margin: 4px 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// ======================================================
+// setting-my-information.html (Setting - My Information)
+// ======================================================
+.setting-title-bg {
+	@extend .announce-title-bg;
+}
+.my-information {
+	padding-left: 0;
+	padding-right: 0;
+	.left-box {
+		padding: 20px;
+		overflow: hidden;
+		> h5 {
+			@include sub-title ($fz: 24px, $fw: normal, $mb: 18px);
+			color: $font-color-purple;
+		}
+		> ul {
+			li {
+				border: 0;
+				clear: both;
+				overflow: hidden;
+				label {
+					font-size: 12px;
+					@include span(full);
+					position: relative;
+					height: $base-line-height;
+					line-height: $base-line-height;
+					padding-left: 16px;
+					margin-top: 4px;
+					&.star:before {
+						@include fa($icon: "\f005", $fz: 10);
+						color: #e66815;
+						position: absolute;
+						left: 0;
+					}
+				}
+				input {
+					font-size: 12px;
+					@include span(full);
+					height: $base-line-height * 2;
+					line-height: $base-line-height * 2;
+					border: 0;
+					border-bottom: 1px solid $border-gray;
+				}
+				.select-style {
+					@include span(full);
+					height: $base-line-height * 2;
+					line-height: $base-line-height * 2;
+					border-bottom: 1px solid $border-gray;
+					> select {
+						border: 0;
+					}
+					&:after {
+						font-size: 18px;
+						right: 10px;
+					}
+				}
+				&:last-child {
+					border: 0;
+				}
+			}
+		}
+	}
+}
+.my-information {
+	@include susy-breakpoint($tablet, 8) {
+		padding-left: 20px;
+		padding-right: 20px;
+		.left-box {
+			> ul {
+				li {
+					label {
+						font-size: 14px;
+						height: $base-line-height * 2;
+						line-height: $base-line-height * 2;
+						@include span(2);
+						margin-top: 0;
+					}
+					input {
+						font-size: 14px;
+						height: $base-line-height * 2;
+						line-height: $base-line-height * 2;
+						@include span(6);
+						@include last;
+					}
+					&.state {
+						label {
+							@include span(2);
+						}
+						.select-style {
+							@include span(6);
+							@include last;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.my-information {
+	@include susy-breakpoint($desktop) {
+		.left-box {
+			@include span(7);
+			@include layout(7 20px/65px);
+			> ul {
+				li {
+					label {
+						@include span(2);
+					}
+					input {
+						@include span(5);
+						@include last;
+					}
+					&.state {
+						label {
+							@include span(2);
+						}
+						.select-style {
+							@include span(5);
+							@include last;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.my-information {
+	.right-box {
+		width: 100%;
+		background: $table-th-bg-color;
+		padding: $base-line-height;
+		margin-bottom: 10px;
+		h6 {
+			@include sub-title ($mb: $base-line-height);
+		}
+		.password {
+			li {
+				margin-bottom: 10px;
+				overflow: hidden;
+				clear: both;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				label {
+					@include span(2);
+					font-size: 12px;
+					height: $base-line-height * 2;
+					line-height: $base-line-height * 2;
+				}
+				input {
+					@include span(4);
+					@include last;
+					font-size: 12px;
+					height: $base-line-height * 2;
+					line-height: $base-line-height * 2;
+				}
+			}
+		}
+		.status {
+			margin-bottom: 10px;
+			overflow: hidden;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			.radio-title {
+				@include span(2);
+				font-size: 12px;
+				height: $base-line-height * 2;
+				line-height: $base-line-height * 2;
+			}
+			.radio-box {
+				@include span(4);
+				@include last;
+				overflow: hidden;
+				input[type=radio] + label span {
+					min-width: 50%;
+					i.fa {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+}
+.my-information {
+	@include susy-breakpoint(640px) {
+		.right-box {
+			.password {
+				@include layout(8 16px/61px);
+				li {
+					label {
+						font-size: 14px;
+						@include span(2);
+					}
+					input {
+						font-size: 14px;
+						@include span(3);
+					}
+				}
+			}
+			.status {
+				.radio-title {
+					@include span(2);
+					font-size: 14px;
+				}
+				.radio-box {
+					@include span(3);
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+.my-information {
+	@include susy-breakpoint($desktop) {
+		.right-box,.btn-box {
+			@include layout(12 20px/65px);
+			@include span(5);
+			@include last;
+		}
+		.right-box {
+			.password {
+				li {
+					@include layout(5 20px/65px);
+					label{
+						@include span(2);
+					}
+					input {
+						@include span(3);
+						@include last;
+					}
+				}
+			}
+			.status {
+				@include layout(5 20px/65px);
+				&:last-child {
+					margin-bottom: 0;
+				}
+				.radio-title {
+					@include span(2);
+				}
+				.radio-box {
+					@include span(3);
+					@include last;
+				}
+			}
+		}
+	}
+}
+.my-information {
+	@include susy-breakpoint($desktop, 12) {
+		.left-box {
+			@include layout(12 20px/65px);
+			@include span(7);
+		}
+		.right-box, {
+			@include layout(12 20px/65px);
+			margin-top: 0;
+			padding: $base-line-height;
+			@include span(5);
+			@include last;
+		}
+	}
+}
+.my-information {
+	.btn-box {
+		overflow: hidden;
+		margin: $base-line-height 0;
+		clear: both;
+		[class^='btn-'] {
+			@include layout(2 11px/197px);
+			font-size: 18px;
+			height: $base-line-height * 2;
+			line-height: $base-line-height * 2;
+		}
+		.btn-save {
+			@include span(1);
+			@extend .btn-default;
+		}
+		.btn-clear {
+			@include span(1);
+			@include last;
+			@extend .btn-cancle;
+		}
+	}
+}
+.my-information {
+	@include susy-breakpoint($desktop, 12) {
+		.btn-box {
+			@include layout(12 20px/65px);
+			@include span(5);
+			@include last;
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+// =======================================
+// sign-up.html (History)
+// =======================================
+.sign-up {
+	margin-top: $base-line-height * 2;
+	margin-bottom: $base-line-height * 2;
+	margin-right: 0;
+	overflow: hidden;
+	> h5 {
+		@include sub-title ($fz: 24px, $fw: normal);
+		color: $font-color-purple;
+	}
+	.sign-up-box {
+		padding-top: 10px;
+		padding-bottom: $base-line-height;
+		overflow: hidden;
+		> dl {
+			margin: $base-line-height 0;
+			overflow: hidden;
+			dt, dd {
+				@include span(full);
+			}
+			dt {
+				font-size: 12px;
+				margin-bottom: 4px;
+				&.star:before {
+					@include fa($icon: "\f005", $fz: 10);
+					color: #e66815;
+					padding-right: 6px;
+				}
+				&.none {
+					display: none;
+				}
+			}
+			dd {
+				line-height: $base-line-height * 2;
+				margin-bottom: 10px;
+				> input {
+					@include span(full);
+					height: $base-line-height * 2;
+					line-height: $base-line-height * 2;
+					border: 0;
+					border-bottom: 1px solid $border-gray;
+				}
+				.confirm-button, .upload-button {
+					@extend .btn-default;
+					width: 170px;
+					height: $base-line-height * 2;
+					line-height: $base-line-height * 2;
+				}
+				.profile {
+					width: 170px;
+					height: 170px;
+					text-align: center;
+					background: $bg-default;
+					border: 1px solid $border-gray;
+					.iconfont-designer {
+						font-size: 100px;
+						line-height: 170px;
+						color: $font-color-nav;
+					}
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	> p {
+		font-size: 12px;
+		line-height: $base-line-height;
+		clear: both;
+		> a {
+			color: $font-color-purple;
+			text-decoration: underline;
+			&.k_toggle {
+				margin-left: 4px;
+				vertical-align: bottom;
+			}
+		}
+		> input[type=checkbox] {
+			display: none;
+		}
+	}
+	.btn-set {
+		margin-top: $base-line-height;
+		@include span(full);
+		a[class$="-button"] {
+			@include layout(2 10px/240px);
+			font-size: 18px;
+			line-height: $base-line-height * 2;
+		}
+		.submit-button {
+			@include span(1);
+			@extend .btn-default;
+		}
+		.clear-button {
+			@include span(1);
+			@include last;
+			@extend .btn-cancle;
+		}
+	}
+}
+.sign-up {
+	@include susy-breakpoint($mobile) {
+		.sign-up-box {
+			border-top: 1px solid $bg-default;
+			border-bottom: 1px solid $bg-default;
+			margin-top: $base-line-height;
+			margin-bottom: $base-line-height;
+			> dl {
+				padding-top: $base-line-height;
+				margin: 0;
+				&:nth-of-type(1) {
+					@include span(full);
+				}
+				&:nth-of-type(2) {
+					@include span(full);
+				}
+			}
+			> dl {
+				@include layout(6 10px/55px);
+				dt {
+					@include span(2);
+					font-size: inherit;
+					line-height: $base-line-height * 2;
+					margin-bottom: 10px;
+					clear: both;
+					&.none {
+						display: block;
+						color: transparent;
+					}
+				}
+				dd {
+					@include span(4);
+					@include last;
+					> input {
+						border: 1px solid $border-gray;
+					}
+				}
+			}
+		}
+		.btn-set {
+			@include span(3);
+			@include w-center ($position: relative, $w-percent: 50%);
+		}
+	}
+}
+.sign-up {
+	@include susy-breakpoint(780px) {
+		@include layout(8 16px/62px);
+		.sign-up-box {
+			> dl {
+				&:nth-of-type(1) {
+					@include span(4);
+				}
+				&:nth-of-type(2) {
+					@include span(4);
+					@include last;
+				}
+			}
+		}
+		.btn-set {
+			@include span(3);
+		}
+	}
+}
+
+.report-title-bg {
+	@extend .title-btn-bg;
+	.title-btn {
+		> a {
+			@include layout(5 0px/200px);
+			line-height: 1.3;
+			padding: 5px 0;
+			letter-spacing: -0.01em;
+			span {
+				display: block;
+			}
+			&:nth-of-type(1) {
+				@include span(1);
+			}
+			&:nth-of-type(2) {
+				@include span(1);
+			}
+			&:nth-of-type(3) {
+				@include span(1);
+			}
+			&:nth-of-type(4) {
+				@include span(1);
+			}
+			&:nth-of-type(5) {
+				@include span(1);
+				@include last;
+			}
+		}
+	}
+}
+.report-title-bg {
+	.title-btn {
+		@include susy-breakpoint(460px) {
+			> a {
+				&:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(5) {
+					line-height: inherit;
+					padding: 0 10px;
+					span {
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
+}
+.report-title-bg {
+	.title-btn {
+		@include susy-breakpoint(600px) {
+			> a {
+				font-size: 14px;
+				padding: 2px 10px;
+				letter-spacing: inherit;
+			}
+		}
+	}
+}
+.report-title-bg {
+	.title-btn {
+		@include susy-breakpoint(920px) {
+			> a {
+				font-size: 16px;
+				line-height: inherit;
+				padding: 0 10px;
+				span {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}

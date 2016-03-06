@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--#include file="_inc/_top-settings.html"-->
+
+<!-- Skip Navigation -->
+<!--#include file="_inc/_skip-navigation.html"-->
+<!-- / Skip Navigation End -->
+
+<!-- Header Area -->
+<!--#include file="_inc/_header.html"-->
+<!-- / Header Area End -->
+
+<!-- Contents Area-->
+<main id="container">
+	<!-- 페이지 전환 버튼 -->
+	<div class="setting-title-bg">
+		<div class="title-btn wrap">
+			<a href="setting-alarm-setting.html">Alarm Setting</a>
+			<a class="selected" href="setting-my-information.html">My Information</a><!-- 선택된 메뉴에 class="selected" 삽입 -->
+		</div>
+	</div>
+	<!-- / 페이지 전환 버튼 End -->
+	<!-- My Information -->
+	<div class="sub-container my-information wrap">
+		<div class="left-box">
+			<h5>Profile</h5>
+			<ul>
+				<li>
+					<label class="star" for="first-name">First Name</label>
+					<input type="text" name="first-name">
+				</li>
+				<li>
+					<label class="star" for="last-name">Last Name</label>
+					<input type="text" name="last-name">
+				</li>
+				<li>
+					<label for="address">Address</label>
+					<input type="text" name="address">
+				</li>
+				<li>
+					<label class="star" for="city">City</label>
+					<input type="text" name="city">
+				</li>
+				<li class="state">
+					<label class="star" for="state">State</label>
+					<div class="select-style">
+						<select name="state">
+							<option value="">-</option>
+							<option value="">State 1</option>
+							<option value="">State 2</option>
+							<option value="">State 3</option>
+							<option value="">State 4</option>
+						</select>
+					</div>
+				</li>
+				<li>
+					<label for="zip-code">ZIP Code</label>
+					<input type="search" name="zip-code">
+				</li>
+				<li>
+					<label class="star" for="mobile-phone">Mobile Phone</label>
+					<input type="tel" name="mobile-phone">
+				</li>
+				<li>
+					<label for="mobile-provider">Mobile Provider</label>
+					<input type="tel" name="mobile-provider">
+				</li>
+				<li>
+					<label for="e-mail">E-mail</label>
+					<input type="email" name="e-mail">
+				</li>
+			</ul>
+		</div>
+		<div class="right-box">
+			<h6>Change Password</h6>
+			<ul class="password">
+				<li><label for="">Password</label><input type="password"></li>
+				<li><label for="">Change Password</label><input type="password"></li>
+				<li><label for="">Confirm Password</label><input type="password"></li>
+			</ul>
+		</div>
+		<div class="right-box">
+			<h6>E-mail and Text</h6>
+			<div class="status">
+				<span class="radio-title">A1 Salon</span>
+				<div class="radio-box">
+					<input type="radio"id="Salon-A-on" name="Salon-A" checked><label for="Salon-A-on"><span><i class="fa fa-circle-o"></i></span></label><input type="radio" id="Salon-A-off" name="Salon-A"><label for="Salon-A-off"><span><i class="fa fa-minus"></i></span></label>
+				</div>
+			</div>
+			<div class="status">
+				<span class="radio-title">B Salon</span>
+				<div class="radio-box">
+					<input type="radio"id="Salon-B-on" name="Salon-B" checked><label for="Salon-B-on"><span><i class="fa fa-circle-o"></i></span></label><input type="radio" id="Salon-B-off" name="Salon-B"><label for="Salon-B-off"><span><i class="fa fa-minus"></i></span></label>
+				</div>
+			</div>
+			<div class="status">
+				<span class="radio-title">C Salon</span>
+				<div class="radio-box">
+					<input type="radio"id="Salon-C-on" name="Salon-C" checked><label for="Salon-C-on"><span><i class="fa fa-circle-o"></i></span></label><input type="radio" id="Salon-C-off" name="Salon-C"><label for="Salon-C-off"><span><i class="fa fa-minus"></i></span></label>
+				</div>
+			</div>
+		</div>
+		<div class="btn-box">
+			<button class="btn-save">Save</button>
+			<button class="btn-clear">Clear</button>
+		</div>
+	</div>
+	<!-- / My Information End -->
+</main>
+<!-- / Contents Area End-->
+
+<!-- Footer Area -->
+<!--#include file="_inc/_footer.html"-->
+<!-- / Footer Area End -->
+
+<!-- windows XP 또는 ie9 이하 브라우저 업그레이드 권장 안내 -->
+<!--#include file="_inc/_ie.html"-->
+
+<!-- Javascript & jQuery Plugin 압축 -->
+<!--#include file="_inc/_javascript.html"-->
+</body>
+</html>

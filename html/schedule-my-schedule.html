@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--#include file="_inc/_top-settings.html"-->
+
+<!-- Skip Navigation -->
+<!--#include file="_inc/_skip-navigation.html"-->
+<!-- / Skip Navigation End -->
+
+<!-- Header Area -->
+<!--#include file="_inc/_header.html"-->
+<!-- / Header Area End -->
+
+<!-- Contents Area-->
+<main id="container">
+	<!-- 페이지 전환 버튼 -->
+	<div class="schedule-title-bg">
+		<div class="title-btn wrap">
+			<a href="schedule-appointment-schedule.html">Appointment <span>Schedule</span></a>
+			<a class="selected" href="schedule-my-schedule.html">My Schedule</a><!-- 선택된 메뉴에 class="selected" 삽입 -->
+			<a href="schedule-history.html">History</a>
+		</div>
+	</div>
+	<!-- / 페이지 전환 버튼 End -->
+	<!-- Schedule : My Schedule -->
+	<div class="my-schedule-list wrap">
+		<!-- 스케줄 관리 설정 -->
+		<div class="line-group-set">
+			<ul class="line-group-01">
+				<li><a href="/" class="btn-add trigger-pop-add-schedule" data-target=".popup-layer.pop-add-schedule"><i class="fa fa-plus"></i>Add</a></li>
+				<li class="select-style">
+					<select>
+						<option value="">All Store</option>
+						<option value="">Store 1</option>
+						<option value="">Store 2</option>
+						<option value="">Store 3</option>
+						<option value="">Store 4</option>
+					</select>
+				</li>
+			</ul>
+		</div>
+		<!-- / 스케줄 관리 설정 End -->
+		<p class="total">Total : 25 </p>
+		<!-- Table list Group -->
+		<div class="responsive-table">
+			<table class="responsive">
+				<caption>Schedule : My Schedule</caption>
+				<colgroup>
+					<col>
+					<col>
+					<col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Store</th>
+						<th>Time</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>MON</td>
+						<td><p class="bg-color-01">A Salon</p></td>
+						<td><p><i class="fa fa-clock-o"></i>9:00 AM ~ 2:30 PM</p></td>
+					</tr>
+					<tr>
+						<td>TUE</td>
+						<td><p class="bg-color-04">Suite Styles Salon</p><p class="bg-color-05">Suite Styles Salon</p><p class="bg-color-06">Suite Styles Salon</p></td>
+						<td><p><i class="fa fa-clock-o"></i>9:00 AM ~ 2:30 PM</p><p><i class="fa fa-clock-o"></i>9:00 AM ~ 2:30 PM</p><p><i class="fa fa-clock-o"></i>9:00 AM ~ 2:30 PM</p></td>
+					</tr>
+					<tr>
+						<td>WED</td>
+						<td><p class="bg-color-01">A Salon</p></td>
+						<td><p><i class="fa fa-clock-o"></i>9:00 AM ~ 2:30 PM</p></td>
+					</tr>
+					<tr>
+						<td>THU</td>
+						<td><p class="bg-color-02">Suite Styles Salon</p></td>
+						<td><p><i class="fa fa-clock-o"></i>9:00 AM ~ 2:30 PM</p></td>
+					</tr>
+					<tr>
+						<td>FRI</td>
+						<td><p class="bg-color-04">Suite Styles Salon</p><p class="bg-color-05">Suite Styles Salon</p><p class="bg-color-06">Suite Styles Salon</p></td>
+						<td><p><i class="fa fa-clock-o"></i>9:00 AM ~ 2:30 PM</p><p><i class="fa fa-clock-o"></i>9:00 AM ~ 2:30 PM</p><p><i class="fa fa-clock-o"></i>9:00 AM ~ 2:30 PM</p></td>
+					</tr>
+					<tr>
+						<td>SAT</td>
+						<td><p class="bg-color-03">B Salon</p></td>
+						<td><p><i class="fa fa-clock-o"></i>9:00 AM ~ 2:30 PM</p></td>
+					</tr>
+					<tr>
+						<td>SUN</td>
+						<td><p class="bg-color-03">B Salon</p></td>
+						<td><p><i class="fa fa-clock-o"></i>9:00 AM ~ 2:30 PM</p></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- / Table list Group End -->
+	</div>
+	<!-- / Schedule : My Schedule End -->
+</main>
+<!-- / Contents Area End-->
+
+<!-- Footer Area -->
+<!--#include file="_inc/_footer.html"-->
+<!-- / Footer Area End -->
+
+<!-- Add Schedule Popup -->
+<!--#include file="/_popup/_pop-add-schedule.html"-->
+<!-- / Add Schedule Popup End -->
+
+<!-- windows XP 또는 ie9 이하 브라우저 업그레이드 권장 안내 -->
+<!--#include file="_inc/_ie.html"-->
+
+<!-- Javascript & jQuery Plugin 압축 -->
+<!--#include file="_inc/_javascript.html"-->
+</body>
+</html>
